@@ -1,3 +1,15 @@
-.hero-container {
-    background-color: darkcyan;
-}
+.main-container {
+    display: flex;
+  }
+  .jumbotron {
+    display: flex; 
+    background-color: #d3d3d3;
+    width: 100%;
+    min-height: 30vh;
+    justify-content: center;
+    align-items: center;
+  }
+  #userSearch {
+    display: inline-flex;
+  }
+  
