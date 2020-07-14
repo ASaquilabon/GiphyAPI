@@ -11,6 +11,7 @@ $(document).ready(() => {
     $("#filter-r").hide()
     //submit button handler
     $("#submit").click(() => {
+        event.preventDefault()
         //when clicked, all filters show
         $("#filter-g").show()
         $("#filter-pg").show()
