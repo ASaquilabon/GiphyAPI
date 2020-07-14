@@ -7,6 +7,9 @@
     align-items: center;
     flex-flow: column;
   }
+  .hero-text {
+      text-align: center;
+  }
   #userSearch {
     display: inline-flex;
   }
