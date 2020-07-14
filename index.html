@@ -14,12 +14,23 @@
 <body>
     <div class="main-container">
         <div class="jumbotron">
-          <h2>Search For Your Favorite Gifs</h2>
-          <input type="text" placeholder="Search Gif" id="userSearch">
-            <button id="submit">submit</button>
+            <div class="hero-text">
+                <h2>Search For Your Favorite Gifs</h2>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Gif" id="userSearch">
+                <button id="submit">submit</button>
+            </div>
+            <div class="filter-btn-container">
+                <button type="submit" class="filter-btn" id="filter-g">Rated G Only</button>
+                <button type="submit" class="filter-btn" id="filter-pg">Rated PG Only</button>
+                <button type="submit" class="filter-btn"  id="filter-pg13">Rated PG-13 Only</button>
+                <button type="submit" class="filter-btn"  id="filter-r">Rated R Only</button>
+            </div>
         </div>
-            <div class="gif-body"></div>
-        </div>
+
+        <div class="gif-body"></div>
+    </div>
     <script src="app.js"></script>
 </body>
 

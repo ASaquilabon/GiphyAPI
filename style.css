@@ -1,15 +1,26 @@
-.main-container {
-    display: flex;
-  }
-  .jumbotron {
+ .jumbotron {
     display: flex; 
     background-color: #d3d3d3;
     width: 100%;
     min-height: 30vh;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
   }
   #userSearch {
     display: inline-flex;
   }
-  
+  .filter-btn-container {
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    padding-top: 30px;
+  }
+.gif-body {
+    display:flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+.gif-img {
+    margin: 5px;
+}
