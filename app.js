@@ -7,40 +7,36 @@ $(document).ready(() => {
 
     //create functions to hide/show filter buttons
     const showFilter = () => {
-        $("#filter-g").show()
-        $("#filter-pg").show()
-        $("#filter-pg13").show()
-        $("#filter-r").show()
+        $(".filter-btn-container").show()
     }
     const hideFilter = () => {
-        $("#filter-g").hide()
-        $("#filter-pg").hide()
-        $("#filter-pg13").hide()
-        $("#filter-r").hide()
+       $(".filter-btn-container").hide()
     }
-
+    //function fetchs gifs from api
+    const fetchGifs = (userSearch) => {
+        //taking value of the user input
+       return $.get(`https://api.giphy.com/v1/gifs/search?q=${userSearch}&api_key=${apiKey}&limit=30`)
+    }
     //hides filters buttons as soon as page loads
     hideFilter()
 
     //submit button handler
     $("#submit").click(() => {
         event.preventDefault()
-
+        const userSearch = $("#userSearch").val()
+        console.log(userSearch)
         //when clicked, all filters show
         showFilter()
-        //taking value of the user input
-        const userSearch = $("#userSearch").val()
         //empty out gif-body 
         clearPage()
         //get/send request to giphy
-        const xhr = $.get(`https://api.giphy.com/v1/gifs/search?q=${userSearch}&api_key=${apiKey}&limit=30`);
-        xhr.done((res) => {
+        fetchGifs(userSearch).done((res) => {
             const gifs = res.data
             //map through data and pull out image url 
             console.log(res.data)
             gifs.map((gif) => {
-                const imageMedium = gif.images.downsized_medium.url
-                $(".gif-body").append('<div class="gif-img"><img src=' + imageMedium + '"></div>')
+               const imageMedium = gif.images.downsized_medium.url
+               $(".gif-body").append('<div class="gif-img"><img src=' + imageMedium + '"></div>')
             })
         })
     })
@@ -49,8 +45,7 @@ $(document).ready(() => {
         const userSearch = $("#userSearch").val()
         clearPage()
         //get/send request to giphy
-        const xhr = $.get(`https://api.giphy.com/v1/gifs/search?q=${userSearch}&api_key=${apiKey}&limit=30`);
-        xhr.done((res) => {
+        fetchGifs(userSearch).done((res) => {
             const gifs = res.data
             console.log(gifs)
             gifs.map((gif) => {
@@ -66,8 +61,7 @@ $(document).ready(() => {
         const userSearch = $("#userSearch").val()
         clearPage()
         //get/send request to giphy
-        const xhr = $.get(`https://api.giphy.com/v1/gifs/search?q=${userSearch}&api_key=${apiKey}&limit=30`);
-        xhr.done((res) => {
+        fetchGifs(userSearch).done((res) => {
             const gifs = res.data
             console.log(gifs)
             gifs.map((gif) => {
@@ -83,8 +77,7 @@ $(document).ready(() => {
         const userSearch = $("#userSearch").val()
         clearPage()
         //get/send request to giphy
-        const xhr = $.get(`https://api.giphy.com/v1/gifs/search?q=${userSearch}&api_key=${apiKey}&limit=30`);
-        xhr.done((res) => {
+        fetchGifs(userSearch).done((res) => {
             const gifs = res.data
             console.log(gifs)
             gifs.map((gif) => {
@@ -100,8 +93,7 @@ $(document).ready(() => {
         const userSearch = $("#userSearch").val()
         clearPage()
         //get/send request to giphy
-        const xhr = $.get(`https://api.giphy.com/v1/gifs/search?q=${userSearch}&api_key=${apiKey}&limit=30`);
-        xhr.done((res) => {
+        fetchGifs(userSearch).done((res) => {
             const gifs = res.data
             console.log(gifs)
             gifs.map((gif) => {
